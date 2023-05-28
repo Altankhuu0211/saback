@@ -14,6 +14,7 @@ import { semesterWeek } from './semester-week/semester-week'
 import { recordAttendance } from './record-attendance/record-attendance'
 import { login } from './login/login'
 import { backup } from './backup/backup'
+import { analytics } from './analytics/analytics'
 
 // For more information about this file see https://dove.feathersjs.com/guides/cli/application.html#configure-functions
 import type { Application } from '../declarations'
@@ -35,5 +36,6 @@ export const services = (app: Application) => {
   app.configure(semesterWeek)
   app.configure(recordAttendance)
   app.configure(backup)
+  app.configure(analytics)
   // All services will be registered here
 }
