@@ -1,0 +1,37 @@
+{
+  "host": "localhost",
+  "port": 3040,
+  "public": "./public/",
+  "origins": [
+    "http://localhost:3040"
+  ],
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "postgresql": {
+    "client": "pg",
+    "connection": "postgres://postgres:1234@localhost:5432/sabackend"
+  },
+  "authentication": {
+    "secret": "RfwxPHa5XSBiz8UcFGPkT64g+8HSkjRv",
+    "service": "users",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "entity": "users",
+    "local": {
+      "usernameField": "username",
+      "passwordField": "password"
+    }
+  }
+}
