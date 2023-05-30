@@ -22,6 +22,10 @@ export class CustomService implements ServiceMethods<Data> {
   }
 
   async find(params: any) {
+    const students = await db.select('*').from('students')
+    if (students.length != 0) {
+      return { data: 'Already fetched.' }
+    }
     const myapp = feathers()
 
     const restClient = rest('http://172.17.0.3:3030')
